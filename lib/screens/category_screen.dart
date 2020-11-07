@@ -3,8 +3,6 @@ import 'package:flutter_meals_app/dummy_data.dart';
 import 'package:flutter_meals_app/widgets/category_item.dart';
 
 class CategoryScreen extends StatelessWidget {
-  static const routeName = "/";
-
   CategoryScreen();
 
   @override
