@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_meals_app/category_item.dart';
+import 'package:flutter_meals_app/dummy_data.dart';
+import 'package:flutter_meals_app/widgets/category_item.dart';
 import 'package:flutter_meals_app/models/category.dart';
 
 class CategoryScreen extends StatelessWidget {
   static const routeName = "/";
 
-  final List<Category> categories;
-
-  CategoryScreen(this.categories);
+  CategoryScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +21,7 @@ class CategoryScreen extends StatelessWidget {
             childAspectRatio: 3 / 2,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20),
-        children: this
-            .categories
+        children: DUMMY_CATEGORIES
             .map((item) => CategoryItem(
                   id: item.id,
                   title: item.title,
