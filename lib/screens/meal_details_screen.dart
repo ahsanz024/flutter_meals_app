@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_meals_app/models/meal.dart';
 
 class MealDetailsScreen extends StatelessWidget {
+  final Function isFavourite;
+  final Function toggleFavourite;
+
+  MealDetailsScreen(this.isFavourite, this.toggleFavourite);
   static const routeName = "/meal-details";
 
   @override
@@ -23,6 +27,14 @@ class MealDetailsScreen extends StatelessWidget {
             getSteps(context, meal.steps)
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          this.toggleFavourite(meal.id);
+        },
+        child: this.isFavourite(meal.id)
+            ? Icon(Icons.favorite_border)
+            : Icon(Icons.favorite),
       ),
     );
   }

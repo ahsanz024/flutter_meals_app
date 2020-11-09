@@ -22,13 +22,11 @@ class CategoryMealsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(catTitle),
       ),
-      body: Container(
-        child: ListView.builder(
-          itemBuilder: (ctx, index) {
-            return MealItem(catMeals[index]);
-          },
-          itemCount: catMeals.length,
-        ),
+      body: ListView.builder(
+        itemBuilder: (ctx, index) {
+          return MealItem(catMeals[index]);
+        },
+        itemCount: catMeals.length,
       ),
     );
   }
